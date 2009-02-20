@@ -1,9 +1,4 @@
 #!/usr/bin/env python
-"""
-Idea and code snippets borrowed from http://www.xhtml.net/scripts/Django-CherryPy-server-DjangoCerise
-Adapted to run as a management command
-"""
-
 
 import logging, sys, os, signal, time, errno
 from socket import gethostname
