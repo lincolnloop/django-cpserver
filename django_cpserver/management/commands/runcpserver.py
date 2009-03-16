@@ -120,7 +120,7 @@ def poll_process(pid):
                 # process has died
                 return False
             else:
-                raise #TODO
+                raise Exception
     return True
 
 def stop_server(pidfile):
@@ -138,7 +138,7 @@ def stop_server(pidfile):
         if poll_process(pid):
             #process didn't exit cleanly, make one last effort to kill it
             os.kill(pid, signal.SIGKILL)
-            if still_alive(pid):
+            if poll_process(pid):
                 raise OSError, "Process %s did not stop."
         os.remove(pidfile)
 
